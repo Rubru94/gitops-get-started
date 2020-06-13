@@ -8,14 +8,14 @@ helm upgrade flux fluxcd/flux --wait \
 --install \
 --namespace flux-system \
 --version=1.3.0 \
---set git.url=git@github.com:mmorejon/gitops-get-started \
+--set git.url=git@github.com:Rubru94/gitops-get-started \
 --set git.branch=master \
 --set git.path=namespaces \
 --set git.pollInterval=5m \
 --set sync.interval=2m \
 --set manifestGeneration=false \
 --set registry.automationInterval=2m \
---set registry.includeImage="*/mmorejon/*" \
+#--set registry.includeImage="*/mmorejon/*" \
 --set syncGarbageCollection.enabled=true \
 --set syncGarbageCollection.dry=true \
 --set memcached.hostnameOverride=flux-memcached.flux-system
