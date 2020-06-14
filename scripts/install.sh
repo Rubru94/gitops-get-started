@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # create namespace
-sudo kubectl apply -f ./namespaces/flux-system/namespace.yaml
+sudo kubectl apply -f ./namespaces/flux-system/namespace.yaml --validate=false
 
 
 # install flux
