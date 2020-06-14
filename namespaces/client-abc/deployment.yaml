@@ -18,8 +18,8 @@ spec:
         name: client-abc
     spec:
       containers:
-      - image: mmorejon/erase-una-vez-1:0.2.0
-        name: erase-una-vez
+      - image: rubru94/spring-test-ejem1:0.2.0
+        name: spring-test-ejem1
         env:
           - name: CHARACTER
             value: "la app ABC."
