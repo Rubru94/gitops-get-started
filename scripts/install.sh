@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 
 # create namespace
-sudo microk8s.kubectl apply -f namespaces/flux-system/namespace.yaml
+sudo kubectl apply -f ./namespaces/flux-system/namespace.yaml
 
 
 # install flux
-sudo microk8s.helm repo add fluxcd https://charts.fluxcd.io
-sudo microk8s.helm init
-sudo microk8s.helm upgrade flux fluxcd/flux --wait \
+sudo helm repo add fluxcd https://charts.fluxcd.io
+sudo helm upgrade flux fluxcd/flux --wait \
 --install \
 --namespace flux-system \
 --version=1.3.0 \
@@ -24,7 +23,7 @@ sudo microk8s.helm upgrade flux fluxcd/flux --wait \
 --set memcached.hostnameOverride=flux-memcached.flux-system
 
 # install flux-helm-operator
-sudo microk8s.helm upgrade helm-operator fluxcd/helm-operator --wait \
+sudo helm upgrade helm-operator fluxcd/helm-operator --wait \
 --install \
 --namespace flux-system \
 --version=1.0.1 \
